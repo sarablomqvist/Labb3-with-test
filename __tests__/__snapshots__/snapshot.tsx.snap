@@ -14,7 +14,7 @@ exports[`Render home unchanged 1`] = `
       <p
         class="description"
       >
-        Click a movie to learn more!
+        Click to learn more!
       </p>
       <div
         class="grid"

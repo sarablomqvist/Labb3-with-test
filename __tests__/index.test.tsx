@@ -15,6 +15,17 @@ describe("Home", () => {
 
     expect(heading).toBeInTheDocument();
   });
+
+  it("renders show", () => {
+    const show = { name: "A", id: 123 };
+    const shows = [{ show }];
+
+    render(<Home shows={shows} />);
+
+    const card = screen.getByText(show.name);
+
+    expect(card).toBeInTheDocument();
+  });
 });
 
 describe("Show", () => {
