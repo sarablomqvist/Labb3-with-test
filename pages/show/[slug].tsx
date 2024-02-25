@@ -1,11 +1,11 @@
 import Link from "next/link";
-import Counter from "./counter";
-import Network from "./network";
-import Image from "./image";
-import Schedule from "./schedule";
-import Webchannel from "./webchannel";
-import Genres from "./genres";
-import Externals from "./externals";
+import Counter from "../../modules/show/counter";
+import Network from "../../modules/show/network";
+import Image from "../../modules/show/image";
+import Schedule from "../../modules/show/schedule";
+import Webchannel from "../../modules/show/webchannel";
+import Genres from "../../modules/show/genres";
+import Externals from "../../modules/show/externals";
 
 export async function getStaticPaths() {
   const res = await fetch("https://api.tvmaze.com/search/shows?q=g");
@@ -32,6 +32,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export default function Page({ show }: { show: any }) {
+  if (!show) return <div className="container">Loading...</div>;
+
   const externals = show.externals ? (
     <Externals externals={show.externals} />
   ) : (

@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "./index.module.css";
-import Header from "./header";
-import Card from "./card";
-import Footer from "./footer";
+import Header from "../../modules/home/header";
+import Card from "../../modules/home/card";
+import Footer from "../../modules/home/footer";
 
 export async function getStaticProps() {
   const res = await fetch("https://api.tvmaze.com/search/shows?q=g");

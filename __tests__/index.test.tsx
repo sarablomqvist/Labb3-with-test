@@ -3,7 +3,7 @@
  */
 import { fireEvent, render, screen } from "@testing-library/react";
 import Home from "@/pages/home/index";
-import Counter from "@/pages/show/counter";
+import Counter from "../modules/show/counter";
 
 describe("Home", () => {
   it("renders a heading", () => {
